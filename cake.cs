@@ -7,7 +7,8 @@ Setup(context=> new BuildData(
         Version = GitHubActions.IsRunningOnGitHubActions
                     ?  $"{DateTime.UtcNow.Year}.{DateTime.UtcNow.Month}.{DateTime.UtcNow.Day}.{GitHubActions.Environment.Workflow.RunNumber}"
                     : $"{DateTime.UtcNow.Year}.{DateTime.UtcNow.Month}.{DateTime.UtcNow.Day}"
-    }));
+    }.SetConfiguration("Release")
+    ));
 
 Task("Restore")
     .Does<BuildData>((context, data)=> DotNetRestore(
