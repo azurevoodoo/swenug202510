@@ -1,4 +1,5 @@
 #:sdk Cake.Sdk
+#:package Cake.BuildSystems.Module@8.0.0
 
 Setup(context=> new BuildData(
     "artifacts",
